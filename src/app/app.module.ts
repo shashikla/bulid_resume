@@ -20,6 +20,11 @@ import {MatSidenavModule} from '@angular/material/sidenav';
 import { PlaneTemplateComponent } from './plane-template/plane-template.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { FormResumeComponent } from './form-resume/form-resume.component';
+import { TemplateComponent } from './template/template.component';
+import { TextColorDirective } from './Directives/text-color.directive';
+import { fontColorDirective } from './Directives/font-color.directive';
+import { capitalizeTextPipe } from './pipes/capitalText.pipe';
+import { ViewResumeComponent } from './view-resume/view-resume.component';
 
 
 @NgModule({
@@ -28,7 +33,12 @@ import { FormResumeComponent } from './form-resume/form-resume.component';
     HomepageComponent,
     ResumeComponent,
     PlaneTemplateComponent,
-    FormResumeComponent
+    FormResumeComponent,
+    TemplateComponent,
+    TextColorDirective,
+    fontColorDirective,
+    capitalizeTextPipe,
+    ViewResumeComponent
   ],
   imports: [
     BrowserModule,

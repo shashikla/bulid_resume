@@ -1,0 +1,92 @@
+.header-section{
+    padding: 10PX 10PX;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+}
+.contentToPrint {
+    // background: #d7e4eb;
+    // padding: 40px;
+}
+
+h3, h2{
+    margin-bottom: 1px;
+}
+p{
+    margin-bottom: 0;
+}
+#invoice{
+    page-break-inside: avoid;
+}
+
+.section-name-details {
+    p {
+        display: flex;
+        justify-content:center;
+        align-items: center;
+        // gap: 10px;
+    }
+
+    h1 {
+        color: #5e74ec;
+        font-family: 'Anton', sans-serif;
+        letter-spacing: 3px;
+    }
+}
+
+.contact-details{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+#resume {
+    // background: #d7e4eb;
+}
+
+.mat-divider {
+    border-top-color: #5e74ec;
+    --mat-divider-width:2px;
+    margin-bottom: 2px;
+}
+
+// .work-exp .work-exp-list:not(:last-child)  {
+//     border-bottom: 1px solid #9c6a6a;
+// }
+
+// .work-exp .work-exp-list:last-child {
+//     border-bottom: 3px solid #9c6a6a;
+// }
+
+.mat-icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.material-icons {
+    font-size: 15px;
+}
+
+.head-chip {
+    color: #5e74ec;
+    text-transform:uppercase !important;
+}
+
+.company-date {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+.employment-date {
+    color: #828282;
+}
+
+.details-head {
+
+    h3 {
+        font-weight: 500;
+    }
+}

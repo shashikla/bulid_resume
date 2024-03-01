@@ -1,0 +1,152 @@
+<div class="header-section">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="generatePDF()">
+        <mat-icon>save_alt</mat-icon>
+    </button>
+    <!-- <button mat-button color="warn" aria-label="Example icon button with a filter list icon" [routerLink]="['/form-fill', name]">
+        Create New
+    </button> -->
+</div>
+
+<mat-card class="contentToPrint" id="invoice" #invoice>
+    <mat-card-content id="resume">
+        <div class="section-name-details" style="text-align: center;">
+            <h1 style="margin-bottom: 1px;" appTextColor >{{'shashikla waghmare' | capitalizeText}}</h1>
+            <h3 style="font-weight: 500;" appFontColor>SOFTWARE ENGINEER</h3>
+            <div class="contact-details">
+                <p><mat-icon aria-hidden="false" aria-label="Example home icon"
+                        fontIcon="call"></mat-icon>+91 7083413638/7709491925</p>
+                <p> | </p>
+                <p><mat-icon aria-hidden="false" aria-label="Example home icon"
+                        fontIcon="email"></mat-icon>swaghmare.p@gmail.com</p>
+                <p>|</p>
+                <p><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="language"></mat-icon>
+                    shashikla-waghmare-95983414b</p>
+            </div>
+            <!-- <p><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            {{resumeDetails?.Details.Contact.mobileNumber}}</p> -->
+        </div>
+        <!-- <mat-divider></mat-divider> -->
+        <div class="section-about details-head">
+            <!-- <h2 class="head-chip">About Me</h2> -->
+            <div style="margin: 4px 0;">
+                <p>Open and adaptable Software Engineer with 3 years of experience in web
+                    application development, proficient in Angular, Node.js, ReactJS, JavaScript,
+                    MongoDB, HTML, and CSS. Actively seeking new opportunities to apply my technical
+                    skills and collaborate on innovative software projects. Committed to delivering high-
+                    quality solutions that drive user satisfaction and business success.</p>
+            </div>
+        </div>
+        <div class="section-education details-head">
+            <h3 class="head-chip" style="margin: 2px 0;">Education History</h3>
+            <mat-divider></mat-divider>
+            <div style="margin-bottom: 5px;">
+                <h3>G H Raisoni Institute Of Information Technology, Nagpur</h3>
+                <div class="company-date">
+                    <p>Masters Of Computer Application | Examination Score - 71%</p>
+                    <p class="employment-date">2018 - 2020</p>
+                </div>
+            </div>
+            <div >
+                <h3>Kamla Nehru Mahavidyalaya,
+                    Nagpur
+                </h3>
+                <div class="company-date">
+                    <p>Bachelor of Computer Application | Examination Score - 61%</p>
+                    <p class="employment-date">2015 - 2018</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-work-exp details-head">
+            <h3 class="head-chip"style="margin-top: 2px;">Work Experience</h3>
+            <mat-divider></mat-divider>
+            <div class="work-exp" >
+                <div class="work-exp-list">
+                    <h3>Software Engineer</h3>
+                    <div class="company-date">
+                        <p>HTS Tech Solutions</p>
+                        <p class="employment-date">June 2023 - Present</p>
+                    </div>
+                    <!-- <p>Pune</p> -->
+                    <ul>
+                        <li>Collaborating with cross-functional teams to gather and analyze project
+                            requirements.</li>
+                        <li>Designing and implementing user-friendly interfaces and web applications using
+                            Angular.</li>
+                        <li>Utilizing the Neutrinos low-code platform to accelerate UI development while
+                            maintaining code quality and standards.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="work-exp" >
+                <div class="work-exp-list">
+                    <h3>Software Engineer</h3>
+                    <div class="company-date">
+                        <p>GlobalLogic India Pvt Ltd.</p>
+                        <p class="employment-date">May 2022 - May 2023</p>
+                    </div>
+                    <!-- <p>Pune</p> -->
+                    <ul>
+                        <li>Front-End Development:
+                            Led the development of user interfaces using the
+                            Angular and ReactJS, ensuring responsive and user-friendly designs that enhanced
+                            the overall user experience.</li>
+                        <li>Back-End Development:
+                            Collaborated with the team to create robust backend
+                            APIs using Node.js and JavaScript, ensuring efficient data handling and
+                            seamless communication with the front-end.</li>
+                        <li>AWS : Proficiently designed, developed, and maintained web applications that
+                            leveraged AWS services to ensure scalability, security, and high performance.</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="work-exp" >
+                <div class="work-exp-list">
+                    <h3>Junior Software Engineer</h3>
+                    <div class="company-date">
+                        <p>Left Right Mind</p>
+                        <p class="employment-date">June 2021 - March 2022</p>
+                    </div>
+                    <!-- <p>Pune</p> -->
+                    <ul>
+                        <li>Actively involved in using Angular to develop user-friendly and responsive web
+                            applications. Ensured seamless integration of front-end components and
+                            modules.</li>
+                        <li>Played a crucial role in identifying and resolving software bugs and issues.
+                            Conducted thorough debugging and troubleshooting to maintain the reliability of
+                            the applications.</li>
+                        <li>Collaborated closely with the team to implement new requirements and
+                            features, ensuring they aligned with project goals and user needs.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="skills-section details-head">
+            <h3 class="head-chip">Certifications:</h3>
+            <mat-divider></mat-divider>
+            <div class="company-date">
+                <div>
+                    <h3> Internship Certificate in Web Development</h3>
+                    <p>Issued by Aavid Software</p>
+                </div>
+                <p class="employment-date">Sept 2020 - March 2021</p>
+            </div>
+            <ul>
+                <li>
+                    Developed responsive web applications using HTML, CSS, and JavaScript.</li>
+                   <li> Assisted in the implementation of front-end features and user interface enhancements.</li>
+                    <li>Collaborated with senior developers to troubleshoot issues and optimize website performance.</li>
+            </ul>
+        </div>
+        <div class="skills-section details-head">
+            <h3 class="head-chip">Skills</h3>
+            <mat-divider></mat-divider>
+            <div >
+                Angular 8+, NodeJS, Javascript,
+                MaongoDB, ReactJS, JSON Web Services,
+                Agile Development process, Typescript,
+                RESTFUL APIs, HTML/CSS, Express.js,
+                Version Control(Git), AWS services
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>

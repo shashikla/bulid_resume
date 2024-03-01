@@ -1,0 +1,88 @@
+<div class="header-section">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="generateNewPdf()">
+        <mat-icon>save_alt</mat-icon>
+    </button>
+    <!-- <button mat-button color="warn" aria-label="Example icon button with a filter list icon" [routerLink]="['/form-fill', name]">
+        Create New
+    </button> -->
+</div>
+
+<mat-card class="contentToPrint" id="invoice" #invoice>
+    <mat-card-content id="resume">
+        <div class="section-name-details" style="text-align: center;">
+            <h1 style="margin-bottom: 1px;">{{resumeDetails?.Name | capitalizeText}}</h1>
+            <h3 style="font-weight: 500;">{{resumeDetails?.Current_role}}</h3>
+            <div class="contact-details">
+                <p>{{resumeDetails?.Details.Contact.mobileNumber}}</p>
+                <p> | </p>
+                <p>{{resumeDetails?.Details.Contact.Email}}</p>
+                <p>|</p>
+                <p>
+                    {{resumeDetails?.Details.Contact.LinkedIn_Profile}}</p>
+            </div>
+            <!-- <p><mat-icon aria-hidden="false" aria-label="Example home icon" fontIcon="home"></mat-icon>
+            {{resumeDetails?.Details.Contact.mobileNumber}}</p> -->
+        </div>
+        <!-- <mat-divider></mat-divider> -->
+        <div class="section-about details-head">
+            <!-- <h2 class="head-chip">About Me</h2> -->
+            <div style="margin: 4px 0;">
+                <p>{{resumeDetails?.Description}}</p>
+            </div>
+        </div>
+        <div class="section-education details-head" style="margin-top: 15px;">
+            <h3 class="head-chip" style="margin: 2px 0;">Education History</h3>
+            <mat-divider></mat-divider>
+            <div style="margin-bottom: 5px;" *ngFor="let edu of resumeDetails?.Details.Education">
+                <h3>{{edu.Degree}}</h3>
+                <div class="company-date">
+                    <p>{{edu.Institution}}</p>
+                    <p class="employment-date">{{edu.Graduation_Date}}</p>
+                </div>
+            </div>
+        </div>
+        <div class="section-work-exp details-head" style="margin-top: 15px;">
+            <h3 class="head-chip"style="margin-top: 2px;">Work Experience</h3>
+            <mat-divider></mat-divider>
+            <div class="work-exp" >
+                <div class="work-exp-list" *ngFor="let exp of resumeDetails?.Details.Work_Experience">
+                    <h3>{{exp.Job_role}}</h3>
+                    <div class="company-date">
+                        <p>{{exp.Company}}</p>
+                        <p class="employment-date">{{exp.Dates_of_Employment}}</p>
+                    </div>
+                    <!-- <p>Pune</p> -->
+                    <ul *ngFor="let resp of exp.Responsibilities">
+                        <li>{{resp}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="skills-section details-head" style="margin-top: 15px;">
+            <h3 class="head-chip">Certifications:</h3>
+            <mat-divider></mat-divider>
+            <div *ngFor="let list of resumeDetails?.Details.Certification">
+            <div class="company-date">
+                <div>
+                    <h3> {{list.Certification_Name}}</h3>
+                    <p>{{list.Certifying_Body}}</p>
+                </div>
+                <p class="employment-date">{{list.Date_of_Certification}}</p>
+            </div>
+            <!-- <ul>
+                <li>
+                    Developed responsive web applications using HTML, CSS, and JavaScript.</li>
+                   <li> Assisted in the implementation of front-end features and user interface enhancements.</li>
+                    <li>Collaborated with senior developers to troubleshoot issues and optimize website performance.</li>
+            </ul> -->
+            </div>
+        </div>
+        <div class="skills-section details-head" style="margin-top: 15px;">
+            <h3 class="head-chip">Skills</h3>
+            <mat-divider></mat-divider>
+            <div>
+                <p>{{ techStack.join(', ') }}</p>
+            </div>
+        </div>
+    </mat-card-content>
+</mat-card>
