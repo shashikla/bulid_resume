@@ -30,9 +30,7 @@ export class FormResumeComponent {
     this.name = userName.toUpperCase();
     this.userService.getDataByUser(userName).subscribe((user)=>{
       console.log({user:user});
-      this.resumeDetails = user.find((ele:any)=>{
-        return ele;
-      });
+      this.resumeDetails = user;
     });
   });
  }

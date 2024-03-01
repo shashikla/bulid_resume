@@ -10,7 +10,7 @@ export class UserDataService {
 
   constructor(private http:HttpClient) { }
 
-  getUserDetailsUrl = "http://localhost:4111/users/save";
+  getUserDetailsUrl = "http://localhost:3000/users";
 
 
   getAllData() : Observable<any>{
@@ -19,6 +19,6 @@ export class UserDataService {
 
 
   getDataByUser(name:any): Observable<any>{
-    return this.http.get(`http://localhost:4111/users/${name}`);
+    return this.http.get(`http://localhost:3000/users/name/${name}`);
   }
 }
