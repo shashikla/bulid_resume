@@ -1,10 +1,12 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild, AfterViewInit } from '@angular/core';
 import jsPDF from 'jspdf';
 import html2canvas from 'html2canvas';
 import html2PDF from 'jspdf-html2canvas';
 import { UserDataService } from '../user-data.service';
 import html2pdf from 'html2pdf.js';
 import { ActivatedRoute } from '@angular/router';
+import { StepperSelectionEvent } from '@angular/cdk/stepper';
+import { MatStepper } from '@angular/material/stepper';
 
 interface User {
   Name: string;
@@ -28,25 +30,36 @@ export class ViewResumeComponent {
   constructor(private route: ActivatedRoute,
     private userService: UserDataService) { }
 
+    @ViewChild('stepper') stepper!: MatStepper;
+
   userData: User[] = [];
   resumeDetails: any;
   name: string = "";
   techStack: string[] = [];
+  stepsData: any[] = [];
+  selectedStepIndex: number = 0;
 
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const userName = (params['name']).toLowerCase();
       this.name = userName.toUpperCase();
       this.userService.getDataByUser(userName).subscribe((user)=>{
-        console.log(user);
         this.resumeDetails = user;
         this.techStack = this.resumeDetails.Details.Technologies;
+        this.stepsData = this.resumeDetails.Details.Work_Experience;
+        setTimeout(() => {
+          this.stepper.selectedIndex = this.stepsData.length - 1; // Set selectedIndex after a short delay
+        }, 0);
         console.log(this.resumeDetails.Details.Technologies);
       });
     });
-
-    
   }
+
+  // stepSelectionChange(event: StepperSelectionEvent): void {
+  //   this.selectedStepIndex = event.selectedIndex;
+  // }
+
+ 
 
   generatePDF() {
     // // Source HTMLElement or a string containing HTML.
@@ -103,9 +116,10 @@ export class ViewResumeComponent {
       margin:       [15,15],
       filename:     'resume-pdf.pdf',
       image:        { type: 'jpeg', quality: 0.98 },
-      html2canvas:  { scale: 2, letterRendering: true  },
+      html2canvas:  { scale: 1.5, letterRendering: true  },
       jsPDF:        { unit: 'mm', format: 'a4', orientation: 'portrait' },
-      pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
+      pagebreak:'css'
+      // pagebreak: { mode: ['avoid-all', 'css', 'legacy'] }
     };
 
     html2pdf().from(element).set(opt).save();

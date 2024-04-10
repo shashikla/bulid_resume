@@ -1,0 +1,41 @@
+/* stepper.component.css */
+
+.stepper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .step-content {
+    display: flex;
+    align-items: center;
+  }
+  
+  .step-circle {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+  }
+  
+  .step-line {
+    border-left: 2px solid #007bff;
+    height: 50px; /* Adjust line height according to your design */
+    margin-left: 14px; /* Adjust according to your design */
+  }
+  
+  .step-details {
+    margin-left: 20px;
+  }
+  
