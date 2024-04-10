@@ -1,0 +1,14 @@
+<!-- stepper.component.html -->
+
+<div class="stepper">
+    <div *ngFor="let experience of currentStepData; let i = index" class="step">
+        <div class="step-content">
+            <div class="step-circle">{{ i + 1 }}</div>
+            <div class="step-line" *ngIf="i !== currentStepData.length - 1"></div>
+        </div>
+        <div class="step-details">
+            <div class="step-header">Company: {{ experience.Job_role }}</div>
+            <p>Position: {{ experience.company }}</p>
+        </div>
+    </div>
+</div>

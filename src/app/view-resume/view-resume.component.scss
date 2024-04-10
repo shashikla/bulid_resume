@@ -28,7 +28,7 @@ p{
     }
 
     h1 {
-        color: #5e74ec;
+        color: black;
         font-family: 'Anton', sans-serif;
         letter-spacing: 3px;
     }
@@ -45,7 +45,7 @@ p{
 }
 
 .mat-divider {
-    border-top-color: #5e74ec;
+    border-top-color: black;
     --mat-divider-width:2px;
     margin-bottom: 2px;
 }
@@ -69,8 +69,9 @@ p{
 }
 
 .head-chip {
-    color: #5e74ec;
+    color: black;
     text-transform:uppercase !important;
+    font-size: 20px;
 }
 
 .company-date {

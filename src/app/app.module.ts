@@ -25,7 +25,8 @@ import { TextColorDirective } from './Directives/text-color.directive';
 import { fontColorDirective } from './Directives/font-color.directive';
 import { capitalizeTextPipe } from './pipes/capitalText.pipe';
 import { ViewResumeComponent } from './view-resume/view-resume.component';
-
+import { MatStepperModule } from '@angular/material/stepper';
+import { VerticalStepperComponent } from './vertical-stepper/vertical-stepper.component';
 
 @NgModule({
   declarations: [
@@ -38,7 +39,8 @@ import { ViewResumeComponent } from './view-resume/view-resume.component';
     TextColorDirective,
     fontColorDirective,
     capitalizeTextPipe,
-    ViewResumeComponent
+    ViewResumeComponent,
+    VerticalStepperComponent
   ],
   imports: [
     BrowserModule,
@@ -55,7 +57,8 @@ import { ViewResumeComponent } from './view-resume/view-resume.component';
     MatListModule,
     MatSlideToggleModule,
     MatSidenavModule,
-    MatDividerModule
+    MatDividerModule,
+    MatStepperModule
   ],
   providers: [],
   bootstrap: [AppComponent]
