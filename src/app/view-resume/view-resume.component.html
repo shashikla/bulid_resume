@@ -1,5 +1,6 @@
 <div class="header-section">
-    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="generateNewPdf()">
+    <button mat-mini-fab color="warn" aria-label="Example icon button with a filter list icon" (click)="savePDF()">
+        <!-- (click)="generateNewPdf()"> -->
         <mat-icon>save_alt</mat-icon>
     </button>
     <!-- <button mat-button color="warn" aria-label="Example icon button with a filter list icon" [routerLink]="['/form-fill', name]">
@@ -30,12 +31,13 @@
                 <p>{{resumeDetails?.Description}}</p>
             </div>
         </div>
-        
+
         <div class="section-work-exp details-head" style="margin-top: 15px;">
-            <h3 class="head-chip"style="margin-top: 2px;">Work Experience</h3>
+            <h3 class="head-chip" style="margin-top: 2px;">Work Experience</h3>
             <mat-divider></mat-divider>
-            <div class="work-exp" >
-                <div class="work-exp-list" *ngFor="let exp of resumeDetails?.Details.Work_Experience">
+            <div class="work-exp">
+                <div class="work-exp-list" *ngFor="let exp of resumeDetails?.Details.Work_Experience"
+                    style="margin-bottom: 10px;">
                     <h3>{{exp.Job_role}}</h3>
                     <div class="company-date">
                         <p>{{exp.Company}}</p>
@@ -48,23 +50,23 @@
                 </div>
             </div>
         </div>
-        <div class="section-work-exp details-head" style="margin-top: 15px;">
-            <h3 class="head-chip"style="margin-top: 2px;">Projects</h3>
+        <!-- <div class="section-work-exp details-head" style="margin-top: 15px;">
+            <h3 class="head-chip" style="margin-top: 2px;">Projects</h3>
             <mat-divider></mat-divider>
-            <div class="work-exp" >
+            <div class="work-exp">
                 <div class="work-exp-list" *ngFor="let exp of resumeDetails?.Details.Projects">
-                    
+
                     <div class="company-date">
                         <h3>{{exp.Job_role}}</h3>
                         <p class="employment-date">{{exp.Dates_of_Employment}}</p>
                     </div>
-                    <!-- <p>Pune</p> -->
+                    
                     <ul *ngFor="let resp of exp.Responsibilities">
                         <li>{{resp}}</li>
                     </ul>
                 </div>
             </div>
-        </div>
+        </div> -->
         <div class="section-education details-head" style="margin-top: 15px;">
             <h3 class="head-chip" style="margin: 2px 0;">Education History</h3>
             <mat-divider></mat-divider>
@@ -79,22 +81,27 @@
         <div class="skills-section details-head" style="margin-top: 15px;">
             <h3 class="head-chip">Skills</h3>
             <mat-divider></mat-divider>
-            <div>
-                <p>{{ techStack.join(', ') }}</p>
+            <div *ngIf="techStack">
+                <p><strong>Frontend Technologies:</strong> {{ techStack.Frontend_Technologies.join(', ') }}</p>
+                <p><strong>Backend Technologies:</strong> {{ techStack.Backend_Technologies.join(', ') }}</p>
+                <p><strong>Tools:</strong> {{ techStack.Tools.join(', ') }}</p>
+                <p><strong>Methodologies:</strong> {{ techStack.Methodologies.join(', ') }}</p>
+                <p><strong>Cloud Services:</strong> {{ techStack.Cloud_Services.join(', ') }}</p>
+                <p><strong>Soft Skills:</strong> {{ techStack.Soft_Skills.join(', ') }}</p>
             </div>
         </div>
         <div class="skills-section details-head" style="margin-top: 15px;">
             <h3 class="head-chip">Certifications:</h3>
             <mat-divider></mat-divider>
             <div *ngFor="let list of resumeDetails?.Details.Certification">
-            <div class="company-date">
-                <div>
-                    <h3> {{list.Certification_Name}}</h3>
-                    <p>{{list.Certifying_Body}}</p>
+                <div class="company-date">
+                    <div>
+                        <h3> {{list.Certification_Name}}</h3>
+                        <p>{{list.Certifying_Body}}</p>
+                    </div>
+                    <p class="employment-date">{{list.Date_of_Certification}}</p>
                 </div>
-                <p class="employment-date">{{list.Date_of_Certification}}</p>
-            </div>
-            <!-- <ul>
+                <!-- <ul>
                 <li>
                     Developed responsive web applications using HTML, CSS, and JavaScript.</li>
                    <li> Assisted in the implementation of front-end features and user interface enhancements.</li>
@@ -102,7 +109,7 @@
             </ul> -->
             </div>
         </div>
-        <div class="section-education details-head" style="margin-top: 15px;">
+        <!-- <div class="section-education details-head" style="margin-top: 15px;">
             <h3 class="head-chip" style="margin: 2px 0;">EXTRACURRICULAR ACTIVITIES</h3>
             <mat-divider></mat-divider>
             <div style="margin-bottom: 5px;" *ngFor="let edu of resumeDetails?.Details.Extra_activities">
@@ -110,7 +117,38 @@
                     <p>- {{edu}}</p>
                 </div>
             </div>
-        </div>
+        </div> -->
+        <!-- <div *ngFor="let exp of resumeDetails?.Details.Projects">
+        <section class="timeline-area">
+            <div class="div">
+                <div class="company-date">
+                    <h3>{{exp.Job_role}}</h3>
+                    <p class="employment-date">{{exp.Dates_of_Employment}}</p>
+                </div>
+                <ul *ngFor="let resp of exp.Responsibilities">
+                    <li>{{resp}}</li>
+                </ul>
+            </div>
+        </section>
+    </div> -->
+
+        <!-- <section class="timeline-area">
+            <div>
+                <h2>Developer</h2>
+                <h3>Google</h3>
+                <h4>2020</h4>
+            </div>
+            <div>
+                <h2>Developer</h2>
+                <h3>Google</h3>
+                <h4>2020</h4>
+            </div>
+            <div>
+                <h2>Developer</h2>
+                <h3>Google</h3>
+                <h4>2020</h4>
+            </div>
+        </section> -->
 
         <!-- <mat-vertical-stepper #stepper>
             <ng-container *ngFor="let step of stepsData; let i = index">
@@ -120,6 +158,17 @@
                 </mat-step>
               </ng-container>
           </mat-vertical-stepper> -->
-          <!-- <app-vertical-stepper></app-vertical-stepper> -->
+        <!-- <app-vertical-stepper></app-vertical-stepper> -->
+        <!-- <mat-stepper orientation="vertical" >
+            <mat-step *ngFor="let step of steps" [label]="step.label" [completed]="true" >
+              {{ step.content }}
+            </mat-step>
+          </mat-stepper>
+          <mat-horizontal-stepper linear #stepper>
+            <mat-step *ngFor="let step of stepsData" [label]="step.Company">
+              <p>{{ step.Job_role }}</p>
+              <p>{{ step.Dates_of_Employment }}</p>
+            </mat-step>
+          </mat-horizontal-stepper> -->
     </mat-card-content>
 </mat-card>
